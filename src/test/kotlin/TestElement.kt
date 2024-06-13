@@ -125,7 +125,7 @@ class TestElement {
         }
         assertEquals("Please introduce a valid name for the attribute.", exception2.message)
 
-        val exception3 = assertThrows<NotFoundException> {
+        val exception3 = assertThrows<EntitiesWithTheSameNameException> {
             curso.renameAttribute("nome","nome")
         }
         assertEquals("New name must be different from the old one.", exception3.message)
