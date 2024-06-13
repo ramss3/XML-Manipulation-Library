@@ -5,7 +5,7 @@
  * @param build The function to apply to the new directory.
  * @return The newly created [Entity] representing the directory.
  */
-fun directory(name: String, build: Entity.() -> Unit) =
+fun entity(name: String, build: Entity.() -> Unit) =
     Entity(name).apply {
         build(this)
     }
@@ -17,7 +17,7 @@ fun directory(name: String, build: Entity.() -> Unit) =
  * @param build The function to apply to the new subdirectory.
  * @return The newly created [Entity] representing the subdirectory.
  */
-fun Entity.directory(name: String, build: Entity.() -> Unit) =
+fun Entity.entity(name: String, build: Entity.() -> Unit) =
     Entity(name, this).apply {
         build(this)
     }

@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class TestDSL {
@@ -24,33 +24,33 @@ class TestDSL {
     val componente3 = Entity("componente", avaliacao1)
     val componente4 = Entity("componente", avaliacao1)
 
-    val dir = directory("plano"){
-        directory("curso"){
+    val dir = entity("plano"){
+        entity("curso"){
             text("Mestrado em Engenharia Informática")
         }
-        directory("fuc"){
-            directory("nome"){
+        entity("fuc"){
+            entity("nome"){
                 text("Programação Avançada")
             }
-            directory("ects"){
+            entity("ects"){
                 text("6.0")
             }
-            directory("avaliacao"){
-                directory("componente"){}
-                directory("componente"){}
+            entity("avaliacao"){
+                entity("componente"){}
+                entity("componente"){}
             }
         }
-        directory("fuc"){
-            directory("nome"){
+        entity("fuc"){
+            entity("nome"){
                 text("Dissertação")
             }
-            directory("ects"){
+            entity("ects"){
                 text("42.0")
             }
-            directory("avaliacao"){
-                directory("componente"){}
-                directory("componente"){}
-                directory("componente"){}
+            entity("avaliacao"){
+                entity("componente"){}
+                entity("componente"){}
+                entity("componente"){}
             }
         }
     }
