@@ -80,23 +80,21 @@ data class Entity(
      */
     override fun prettyPrint(indentation: String): String {
         var text = "$indentation<$name"
-        this.attributes.forEach{
+        this.attributes.forEach {
             text += it.prettyPrint()
         }
-        if(this.children.isEmpty()){
+        if (this.children.isEmpty()) {
             text += "/>"
-        }else{
+        } else {
             text += ">"
-            var hasText = false
+            val hasText = children.any { it is Text }
             this.children.forEach {
-                if(it is Text){
-                    hasText = true
-                    text += it.prettyPrint()
-                } else {
-                    text += "\n" + it.prettyPrint("$indentation\t")
-                }
+                if (!hasText)
+                    text += "\n"
+                text += it.prettyPrint("$indentation\t")
             }
-            text += if (hasText) "</$name>" else "\n$indentation</$name>"        }
+            text += if (hasText) "</$name>" else "\n$indentation</$name>"
+        }
         return text
     }
 }
