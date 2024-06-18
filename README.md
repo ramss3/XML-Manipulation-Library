@@ -34,7 +34,8 @@ cd XML-Manipulation-Library
 # Usage
 With the developed API we are able to manipulate XML documents in memory. For that we have three data classes (Document, Entity, Text and Attribute) wich are connected as follows:
 
-![image](https://github.com/ramss3/XML-Manipulation-Library/assets/114669069/049d4190-6d69-423d-997c-17cdc66febcc)
+![image](https://github.com/ramss3/XML-Manipulation-Library/assets/114669069/e15d2252-45c2-46ea-9251-b99cab02f650)
+
 
 
 To create a Document object its always necessary to provide a name for it and an entity root. If the user doens't want the default version("1.0") or enconding("UTF-8"), it can also be provided.
